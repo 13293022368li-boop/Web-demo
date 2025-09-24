@@ -1,0 +1,94 @@
+﻿/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+
+   Great Lakescape Lodge Style Sheet
+   Author: QianZheng Li
+   Date:   9.24
+   
+   Filename: lake_styles.css
+*/
+@charset "UTF-8";
+@font-face {
+    font-family: 'DobkinPlain';
+    src: url('DobkinPlain.woff') format('woff'),
+         url('DobkinPlain.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CacChampagne';
+    src: url('cac_champagne.woff') format('woff'),
+         url('cac_champagne.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --main-bg-color: #f4f1de;
+}
+
+/*Edge color*/
+body {
+  border-right: calc(3vw) solid rgb(199, 231, 22);
+  border-left: calc(3vw) solid rgb(199, 231, 22); 
+  
+}
+/* Ensure that the body and html elements occupy the entire height */
+html {
+   height: 100%;   
+   color: #fff;
+        /* ...existing code... */
+    }
+
+    h1 {
+        font-family: 'CacChampagne', 'DobkinPlain', 'Arial', sans-serif;
+    }
+
+    section#leftcol {
+        background: #222;
+        padding: 2em;
+    }
+    section#leftcol aside:first-of-type {
+        background: #907708;
+        color: #fff;
+        padding: 1em;
+        border-radius: 8px;
+    }
+
+    section#leftcol aside:last-of-type {
+        background: #3d405b;
+        color: #fff;
+        padding: 1em;
+        border-radius: 8px;
+    }
+    section#rightcol > nav > h2 {
+   font-family:DobkinPlain;
+   font-size:2em;
+   font-weight:400;
+   color:slateblue
+}
+ section#rightcol > blockquote{
+   font-size:1em;
+   font-weight:400;
+   color:rgb(190, 90, 205)
+}
+
+/*Header Navigation*/
+header > nav a {
+   color:rgb(245, 245, 245, 0.5); 
+   background:rgb(109, 26, 109);
+   text-decoration:none;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--main-bg-color);
+}
+
+footer {
+   color:whitesmoke;
+   background:grey;
+   text-align: center;
+   padding:5px;
+}
