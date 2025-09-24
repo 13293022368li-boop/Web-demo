@@ -43,11 +43,12 @@ html {
 
     h1 {
         font-family: 'CacChampagne', 'DobkinPlain', 'Arial', sans-serif;
+        font-size:3em;
     }
 
     section#leftcol {
         background: #222;
-        padding: 2em;
+        padding:1em;
     }
     section#leftcol aside:first-of-type {
         background: #907708;
