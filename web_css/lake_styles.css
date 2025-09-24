@@ -10,6 +10,8 @@
    Filename: lake_styles.css
 */
 @charset "UTF-8";
+
+/* --- Web Fonts --- */
 @font-face {
     font-family: 'DobkinPlain';
     src: url('DobkinPlain.woff') format('woff'),
@@ -24,71 +26,107 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* --- Root variable --- */
 :root {
     --main-bg-color: #f4f1de;
 }
 
-/*Edge color*/
+/* --- Page Edge Colors --- */
 body {
   border-right: calc(3vw) solid rgb(199, 231, 22);
   border-left: calc(3vw) solid rgb(199, 231, 22);  
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--main-bg-color);
 }
-/* Ensure that the body and html elements occupy the entire height */
+
+/* --- HTML base --- */
 html {
    height: 100%;   
    color: #fff;
-        /* ...existing code... */
-    }
-
-    h1 {
-        font-family: 'CacChampagne', 'DobkinPlain', 'Arial', sans-serif;
-        font-size:3em;
-    }
-
-    section#leftcol {
-        background: #222;
-        padding:1em;
-    }
-    section#leftcol aside:first-of-type {
-        background: #907708;
-        color: #fff;
-        padding: 1em;
-        border-radius: 8px;
-    }
-
-    section#leftcol aside:last-of-type {
-        background: #3d405b;
-        color: #fff;
-        padding: 1em;
-        border-radius: 8px;
-    }
-    section#rightcol > nav > h2 {
-   font-family:DobkinPlain;
-   font-size:2em;
-   font-weight:400;
-   color:slateblue
-}
- section#rightcol > blockquote{
-   font-size:1em;
-   font-weight:400;
-   color:rgb(190, 90, 205)
 }
 
-/*Header Navigation*/
+/* --- Headings --- */
+h1 {
+    font-family: 'CacChampagne', 'DobkinPlain', 'Arial', sans-serif;
+    font-size: 3em;
+}
+
+/* --- Left Column Styles --- */
+section#leftcol {
+    background: #222;
+    padding: 1em;
+}
+section#leftcol aside:first-of-type {
+    background: #907708;
+    color: #fff;
+    padding: 1em;
+    border-radius: 8px;
+}
+section#leftcol aside:last-of-type {
+    background: #3d405b;
+    color: #fff;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+/* --- Right Column Styles --- */
+section#rightcol > nav > h2 {
+   font-family: DobkinPlain;
+   font-size: 2em;
+   font-weight: 400;
+   color: slateblue;
+}
+section#rightcol > blockquote {
+   font-size: 1.1em;
+   font-weight: 400;
+   color: rgb(190, 90, 205);
+}
+
+/* --- Header Navigation --- */
 header > nav a {
-   color:rgb(245, 245, 245, 0.5); 
-   background:rgb(109, 26, 109);
-   text-decoration:none;
+color: rgba(245, 245, 245, 0.9); /* This makes the font clearer */ background: rgb(109, 26, 109);
+text-decoration: none;
+box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Shadow */ display: inline-block;          /* Prevent link collapse */
+transition: all 0.3s ease;      /* Smooth transition effect */ }
+
+
+/* On mouse hover */ header > nav a:hover {
+background: rgb(139, 36, 139);  /* Brighten color on hover */
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4); }
+
+/* --- Lists Styling (Task 3.f) --- */
+ul {
+    list-style-type: square;
+    margin-left: 2em;
+    padding: 0.5em;
+    color: #333;
 }
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: var(--main-bg-color);
+ol {
+    list-style-type: upper-roman;
+    margin-left: 2em;
+    padding: 0.5em;
+    color: #444;
+}
+li {
+    margin-bottom: 0.4em;
 }
 
+/* --- Blockquote --- */
+blockquote::before {
+    content: open-quote;
+    font-size: 1.3em;
+}
+blockquote::after {
+    content: close-quote;
+    font-size: 1.3em;
+}
+
+/* --- Footer --- */
 footer {
-   color:whitesmoke;
-   background:grey;
+   color: whitesmoke;
+   background: grey;
    text-align: center;
-   padding:5px;
+   padding: 5px;
 }
