@@ -31,8 +31,7 @@
 /*Edge color*/
 body {
   border-right: calc(3vw) solid rgb(199, 231, 22);
-  border-left: calc(3vw) solid rgb(199, 231, 22); 
-  
+  border-left: calc(3vw) solid rgb(199, 231, 22);  
 }
 /* Ensure that the body and html elements occupy the entire height */
 html {
