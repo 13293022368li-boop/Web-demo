@@ -56,19 +56,19 @@ h1 {
 /* --- Left Column Styles --- */
 section#leftcol {
     background: #222;
-    padding: 1em;
+    padding: 1em; 
 }
 section#leftcol aside:first-of-type {
     background: #907708;
     color: #fff;
-    padding: 1em;
+    padding: 1em; 
     border-radius: 8px;
 }
 section#leftcol aside:last-of-type {
     background: #3d405b;
     color: #fff;
     padding: 1em;
-    border-radius: 8px;
+    border-radius: 5px; 
 }
 
 /* --- Right Column Styles --- */
@@ -82,6 +82,10 @@ section#rightcol > blockquote {
    font-size: 1.1em;
    font-weight: 400;
    color: rgb(190, 90, 205);
+}
+section#rightcol>nav>ul{
+    list-style-type: none;
+    text-decoration: none;
 }
 
 /* --- Header Navigation --- */
