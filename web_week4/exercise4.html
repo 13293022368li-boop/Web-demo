@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if判断+计数器</title>
+</head>
+<body>
+    请输入内容: <input type="text" id="reply" placeholder="试试输入含'fred'的内容">
+    <button onclick="checkText()">提交</button>
+    <!-- 显示弹窗次数 -->
+     <p>弹窗次数: <span id="popupCount">0</span></p>
+     <script>
+        let count= 0;
+        function checkText(){
+            let inputContent=document.getElementById("reply").value;
+            let countElem=document.getElementById("popupCount");
+            // 1.判断内容是否包含'fred',不区分大小写
+            if(inputContent.toLowerCase().includes("fred")){
+              let modifiedText=inputContent.toLowerCase().includes("fred")
+              ? inputContent.replace(/fred/gi,"FRED")
+              :inputContent;
+              count++;
+                countElem.textContent=count;
+                alert(`第${count}次弹窗!你输入的内容(已处理):${modifiedText}`);
+            }else{
+                alert("你输入的内容不包含'fred'");
+            }
+        }
+     </script>
+</body>
+</html>
