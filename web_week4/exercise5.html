@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环</title>
+    <!-- 简单加样式，让数字显示更整齐 -->
+    <style>
+    body{font-family:Arial;margin:20px;}
+    .result{margin:10px 0 ; padding:8px ; background:#f5f5f5;}
+    </style>
+    </head>
+<body>
+    <!-- 固定范围循环（显示1-10的数字） -->
+     <h3>显示1-10的数字</h3>
+     <p id="output" class="result">加载中...</p>
+     <hr> <!-- 分割线 -->
+     <h3>1到你输入的数字</h3>
+     请输入上限数字:<input type="text" id="upperlimit" placeholder="比如20/30">
+     <button onclick="showCustomRange()">点击显示1到这个数字</button>
+     <p id="customOutput" class="result">请输入数字并点击按钮</p>
+     <script>
+        const outputElem = document.getElementById("output");
+        let numText="";
+        for(let i =1;i <=10;i++){
+            numText +=i+" ";
+        }
+        outputElem.textContent = "1到10的数字是: " + numText;
+        function showCustomRange(){
+            const inputValue = document.getElementById("upperlimit").value;
+            const upperNum = parseInt(inputValue);   
+            const customElem = document.getElementById("customOutput");
+            if(isNaN(upperNum) || upperNum < 1){
+                alert("Not a valid number: " + inputValue);
+                customElem.textContent = "输入无效,请重新输入1以上的整数!";
+                return;
+            }
+                let customText="";
+                for(let i =1;i <=upperNum;i++){
+                    customText +=i+" ";
+                }
+                customElem.textContent = "1到" + upperNum + "的数字是: " + customText;
+        }
+     </script>
+</body>
+</html>
