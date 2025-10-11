@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组操作</title>
+    <style>
+        body{font-family:Arial, Helvetica, sans-serif;
+        margin:30px;}
+        #inputBox{
+            padding:6px;
+            width:250px;
+            margin-right:10px;
+        }
+        button{
+            padding:6px 12px;
+            margin:0 5px;
+            cursor:pointer;
+        }
+        #arrayDisplay{
+            margin-top:20px;
+            color:#333;
+            font-size:18px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 文本框：用于输入想要添加的内容，id设为inputBox -->
+         <input type="text" id="inputBox" placeholder="输入内容(比如：apple, banana)">
+         
+         <button onclick="addItem()">Add(添加到数组)</button>
+        <button onclick="showItem()">Show(显示所有内容)</button>
+        <button onclick="clearItem()">Clear(清空数组)</button>
+        <button onclick="deleteLastItem()">Remove Last(移除最后一个)</button>
+    </div>
+    <h3 id="arrayDisplay">数组内容:暂无数据</h3>
+    <script>
+        // 初始化一个空数组
+        let myArray = [];
+
+        function addItem(){
+            let inputContent = document.getElementById("inputBox").value;
+            if(inputContent.trim() === ""){
+                alert("输入不能为空，请输入内容!");
+                return;
+            }
+            myArray.push(inputContent);
+            document.getElementById("inputBox").value = "";
+            alert("已添加: " + inputContent);
+        }
+        function showItem(){
+            let displayElem = document.getElementById("arrayDisplay");
+            if(myArray.length === 0){
+                displayElem.textContent = "数组内容:暂无数据";
+            } else {
+                displayElem.textContent = "数组内容: " + myArray.join(", ");
+            }
+            let arrayText = myArray.join(",");
+            displayElem.textContent=`数组内容: ${arrayText}`;
+        }
+        function clearItem(){
+            myArray = [];
+            document.getElementById("arrayDisplay").textContent = "数组内容:暂无数据";
+            alert("数组已清空!");
+        }
+        function deleteLastItem(){
+            if(myArray.length === 0){
+                alert("数组为空，无法移除最后一个元素!");
+                return;
+            }
+            let removedItem = myArray.pop();
+            alert("已移除: " + removedItem);
+            showItem();
+        }
+    </script>
+</body>
+</html>

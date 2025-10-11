@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Cafe - Book a Table</title>
+    <script>
+    // 检测是否为 IE
+    if (document.documentMode || /MSIE/.test(navigator.userAgent)) {
+        window.location.href = "index-ie.html";
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <style>
+        /* 渐变按钮效果 */
+        .gradient-btn {
+            background: linear-gradient(90deg, #4B2E2E, #FF7F50);
+            transition: background 0.3s;
+        }
+        .gradient-btn:hover {
+            background: linear-gradient(90deg, #FF7F50, #4B2E2E);
+        }
+    </style>
+</head>
+<body class="font-opensans text-gray-800" style="background-color: #FFF;">
+    <a href="#main-content" 
+    class="sr-only focus:not-sr-only focus:block absolute top-4 left-4 bg-coffee-medium text-white px-4 py-2 rounded-full shadow-lg transition-all duration-200">
+    Skip to main content
+    </a>
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 shadow-md backdrop-blur-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- LOGO 与品牌名称 -->
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="assets/images/logo.webp" alt="Coffee Cafe Logo" class="h-16 w-auto rounded-full">
+                <span class="font-montserrat font-bold text-3xl text-coffee-dark">Coffee Cafe</span>
+            </a>
+            
+            <!-- 桌面端导航 -->
+            <nav class="hidden md:flex items-center" aria-label="Main Navigation">
+                <!-- 使用 <ul> 包裹，保持原有间距 -->
+                <ul class="flex items-center space-x-8 list-none m-0 p-0 text-lg">
+                    <li><a href="index.html" class="menu-item font-medium text-coffee-dark hover:text-coffee-medium transition-colors">Home</a></li>
+                    <li><a href="index.html" class="menu-item font-medium text-coffee-dark hover:text-coffee-medium transition-colors">About</a></li>
+                    <li><a href="index.html" class="menu-item font-medium text-coffee-dark hover:text-coffee-medium transition-colors">Menu</a></li>
+                    <li><a href="index.html" class="menu-item font-medium text-coffee-dark hover:text-coffee-medium transition-colors">Visit Us</a></li>
+                    <li><a href="index.html" class="menu-item font-medium text-coffee-dark hover:text-coffee-medium transition-colors">Events</a></li>
+                    <li>
+                        <a href="order.html" class="bg-coffee-dark hover:bg-coffee-medium text-white px-5 py-2 rounded-full transition-colors flex items-center">
+                            Order Now
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-coffee-dark text-2xl" aria-controls="mobileMenu" aria-expanded="false">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <nav aria-label="Main Navigation"> 
+                <ul class="container mx-auto px-4 py-3 flex flex-col space-y-4 list-none m-0 p-0">
+                    <li><a href="index.html" class="font-medium text-coffee-dark hover:text-coffee-medium py-2 border-b border-gray-100">Home</a></li>
+                    <li><a href="index.html" class="font-medium text-coffee-dark hover:text-coffee-medium py-2 border-b border-gray-100">Menu</a></li>
+                    <li><a href="index.html" class="font-medium text-coffee-dark hover:text-coffee-medium py-2 border-b border-gray-100">Visit Us</a></li>
+                    <li><a href="index.html" class="font-medium text-coffee-dark hover:text-coffee-medium py-2 border-b border-gray-100">Events</a></li>
+                    <li><a href="index.html" class="font-medium text-coffee-dark hover:text-coffee-medium py-2">About</a></li>
+                    <li>
+                        <a href="order.html" class="bg-coffee-dark hover:bg-coffee-medium text-white px-5 py-2 rounded-full transition-colors flex items-center justify-center">
+                            Order Now
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+<!-- 预订信息和表单合并区域 -->
+<section class="py-16 container mx-auto px-4 mt-12">
+    <div class="flex flex-col md:flex-row gap-12">
+        <!-- 文字信息 -->
+        <div class="md:w-1/2 flex flex-col justify-center">
+            <h1 class="font-montserrat text-4xl md:text-5xl font-bold mb-4 text-coffee-dark">Reserve Your Table</h1>
+            <p class="text-lg md:text-xl max-w-xl mb-8 text-coffee-dark">Book your spot at Coffee Cafe and enjoy handcrafted drinks in a cozy atmosphere.</p>
+            <h2 class="text-3xl font-montserrat font-bold mb-6 text-coffee-dark">Reservation Info</h2>
+            <ul class="space-y-4 text-lg text-coffee-dark">
+                <li><strong>Address:</strong> 123 Main Street, Palmerston North, 4410</li>
+                <li><strong>Email:</strong> <a href="mailto:hello@coffeecafe.co.nz" class="underline hover:text-coffee-medium">hello@coffeecafe.co.nz</a></li>
+                <li><strong>Delivery:</strong> <a href="https://www.ubereats.co.nz/store/coffee-cafe-palmerston-north/12345" target="_blank" rel="noopener" class="underline hover:text-coffee-medium">Pre-order your coffee delivery with Uber Eats</a></li>
+                <li><strong>Phone:</strong> <a href="tel:+6465551234" class="underline hover:text-coffee-medium">+64 6 555 1234</a></li>
+                <li><strong>Opening Days:</strong>Opening Hours:</li>
+                    <ul class="ml-12">
+                      <li><span class="font-semibold">Mon - Fri</span> · 7:00 AM - 6:00 PM</li>
+                      <li><span class="font-semibold">Saturday</span> · 8:00 AM - 5:00 PM</li>
+                      <li><span class="font-semibold">Sunday</span> · 9:00 AM - 4:00 PM</li>
+                    </ul>
+            </ul>
+            <div class="mt-8 text-gray-600">
+                <p>Maximum 10 guests per booking. For larger groups, please contact us directly.</p>
+            </div>
+        </div>
+        <!-- 表单区域 -->
+        <div class="md:w-1/2 bg-coffee-dark/5 rounded-xl p-6 md:p-12 shadow-lg">
+            <h2 class="text-2xl font-montserrat font-bold mb-6 text-coffee-dark">Booking Form</h2>
+            <form class="flex flex-col gap-4">
+                <input type="text" name="name" placeholder="Your Name" class="px-4 py-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-coffee-medium" required>
+                <input type="email" name="email" placeholder="Your Email" class="px-4 py-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-coffee-medium" required>
+                <input type="tel" name="phone" placeholder="Phone Number" class="px-4 py-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-coffee-medium" required>
+                <input type="number" name="guests" placeholder="Number of Guests" class="px-4 py-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-coffee-medium" min="1" max="10" required>
+                <input type="date" name="date" class="px-4 py-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-coffee-medium" required>
+                <input type="time" name="time" class="px-4 py-3 rounded-full border focus:outline-none focus:ring-2 focus:ring-coffee-medium" required>
+                <textarea name="notes" placeholder="Additional Notes" class="px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-coffee-medium"></textarea>
+                <button type="submit" class="gradient-btn text-white font-semibold px-6 py-3 rounded-full mt-4 text-lg">
+                    Confirm Booking
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- 品牌介绍与社交链接 -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="assets/images/logo.webp" alt="Coffee Cafe Logo" class="h-10 w-auto rounded-full">
+                        <span class="font-montserrat font-bold text-xl">Coffee Cafe</span>
+                    </div>
+                    <p class="mb-4 opacity-80">
+                        Your community coffee corner in the heart of Palmerston North. Handcrafted drinks and delicious treats since 2025.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/coffeecafe.nz" target="_blank" rel="noopener" title="Visit our Facebook page" class="text-gray-300 hover:text-white transition-colors">
+  <i class="fa fa-facebook"></i>
+</a>
+<a href="https://www.instagram.com/coffeecafe.nz" target="_blank" rel="noopener" title="Visit our Instagram page" class="text-gray-300 hover:text-white transition-colors">
+  <i class="fa fa-instagram"></i>
+</a>
+<a href="https://twitter.com/coffeecafe_nz" target="_blank" rel="noopener" title="Visit our Twitter page" class="text-gray-300 hover:text-white transition-colors">
+  <i class="fa fa-twitter"></i>
+</a>
+<a href="https://plus.google.com/coffeecafe.nz" target="_blank" rel="noopener" title="Visit our Google Plus page" class="text-gray-300 hover:text-white transition-colors">
+  <i class="fa fa-google-plus"></i>
+</a>
+                    </div>
+                </div>
+                
+                <!-- 快速导航列表 -->
+                <div>
+                    <h3 class="font-montserrat font-semibold text-lg mb-6">Quick Links / Site Map</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="opacity-80 hover:opacity-100 transition-opacity">Home</a></li>
+                        <li><a href="#about" class="opacity-80 hover:opacity-100 transition-opacity">About Us</a></li>
+                        <li><a href="#menu" class="opacity-80 hover:opacity-100 transition-opacity">Our Menu</a></li>
+                        <li><a href="#visit" class="opacity-80 hover:opacity-100 transition-opacity">Visit Us</a></li>
+                        <li><a href="#events" class="opacity-80 hover:opacity-100 transition-opacity">Events</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 联系方式列表 -->
+                <div>
+                    <h3 class="font-montserrat font-semibold text-lg mb-6">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 opacity-80"></i>
+                            <span class="opacity-80">123 Main Street, Palmerston North, 4410</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3 opacity-80"></i>
+                            <a href="tel:+6465551234" class="opacity-80 underline-offset-2 hover:underline">+64 6 555 1234</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 opacity-80"></i>
+                            <a href="mailto:hello@coffeecafe.co.nz" class="opacity-80 underline-offset-2 hover:underline">hello@coffeecafe.co.nz</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-motorcycle mr-3 opacity-80"></i>
+                            <a href="https://www.ubereats.co.nz" target="_blank" rel="noopener" class="opacity-80 underline-offset-2 hover:underline">Order via Uber Eats</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 营业时间信息 -->
+                <div>
+                    <h3 class="font-montserrat font-semibold text-lg mb-6">Opening Hours</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span class="opacity-80">Monday - Friday:</span>
+                            <span>7:00 AM - 6:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="opacity-80">Saturday:</span>
+                            <span>8:00 AM - 5:00 PM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="opacity-80">Sunday:</span>
+                            <span>9:00 AM - 4:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-sm opacity-70">
+                <p>&copy; 2025 Coffee Cafe. All rights reserved. Last updated: September 2025.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

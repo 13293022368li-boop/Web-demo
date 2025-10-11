@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改页面字体+记录切换历史</title>
+    <style>
+        body{
+            margin:30px;
+            line-height:1.6;
+        }
+        input[type="button"]{
+            padding:8px 16px;
+            margin:8px 0;
+            cursor: pointer;
+            background:#f0f0f0;
+            border:1px solid #ccc;
+            border-radius:4px;
+        }
+        input[type="button"]:hover{
+            background:#e0e0e0;
+        }
+        #changeList{
+            margin-top:20px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            width:400px;
+            min-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h4>Change Body Font (点击切换页面字体)</h4>
+    <input type="button" value="Body Font is Arial" onclick="setFont('Arial')" ><br>
+    <input type="button" value="Body Font is Georgia" onclick="setFont('Georgia')" ><br>
+    <input type="button" value="Body Font is Times New Roman" onclick="setFont('Times New Roman')" ><br>
+    <!-- 修复：按钮调用的函数名改为revertFont，与定义一致 -->
+    <input type="button" value="Revete Body Font (返回默认字体)" onclick="revertFont()"> <br>
+    <input type="button" value="Show Change History (显示切换历史)" onclick="showHistory()"> <br>
+    <p><b>Changes(字体切换记录)</b></p>
+    <p id="changeList">None yet(暂无记录)</p>
+    <script>
+        let originalFont = null;
+        let fontChanges = [];
+        
+        function setFont(whichFont) {
+            if (originalFont === null) {
+            
+                originalFont = document.body.style.fontFamily || "浏览器默认字体";
+            }
+            
+            document.body.style.fontFamily = whichFont;
+            fontChanges.push(whichFont);
+            alert("Body font changed to: " + whichFont);
+        }
+        
+        function revertFont() {
+            if (originalFont !== null) {
+                document.body.style.fontFamily = originalFont;
+                alert("Body font reverted to original: " + originalFont);
+                
+            } else {
+                alert("Body font is already at original setting.");
+            }
+        }
+        
+        function showHistory() {
+
+            let changeListElem = document.getElementById("changeList");
+            
+            if (fontChanges.length === 0) {
+                alert("No font changes (暂无切换记录)");
+                changeListElem.textContent = "None yet(暂无记录)";
+                return;
+            }
+            let historyText = "";
+            for (let i = 0; i < fontChanges.length; i++) {
+              
+                historyText += (i + 1) + ". " + fontChanges[i] + "<br>";
+            }
+            
+            changeListElem.innerHTML = historyText;
+        }
+    </script>
+</body>
+</html>
