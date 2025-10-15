@@ -1,4 +1,3 @@
-function randomInt(){
-    const randomNum= Math.floor(Math.random()*100)+1;
-    return randomNum;
+function randomInt() {
+  return Math.floor(Math.random() * 100) + 1;
 }

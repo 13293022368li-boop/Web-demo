@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercise 4 - Guess the Number</title>
+  <script src="js/randominteger.js"></script>
+</head>
+<body>
+  <h1>Number Guessing Game</h1>
+  <p>I have selected a random number between 1 and 100. You have 10 chances to guess it!</p>
+
+  <input type="number" id="guessField" placeholder="Enter your guess">
+  <button onclick="checkGuess()">Submit</button>
+
+  <p id="result"></p>
+  <p id="previousGuesses"></p>
+
+  <script>
+    let randomNumber = randomInt();
+    let guesses = 0;
+    let previous = [];
+
+    function checkGuess() {
+      const guess = Number(document.getElementById('guessField').value);
+      guesses++;
+      previous.push(guess);
+      const result = document.getElementById('result');
+      const prevDisplay = document.getElementById('previousGuesses');
+
+      if (guess === randomNumber) {
+        result.textContent = "🎉 Congratulations! You got it right. The number was " + randomNumber + ".";
+        resetGame();
+      } else if (guesses === 10) {
+        result.textContent = "😢 Game Over! The correct number was " + randomNumber + ".";
+        resetGame();
+      } else {
+        result.textContent = guess < randomNumber ? "Too low!" : "Too high!";
+        prevDisplay.textContent = "Previous guesses: " + previous.join(", ");
+      }
+    }
+
+    function resetGame() {
+      const playAgain = confirm("Do you want to play again?");
+      if (playAgain) {
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>
