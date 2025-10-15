@@ -1,0 +1,56 @@
+[
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alice.johnson@example.com",
+    "dateOfBirth": "1998-03-15",
+    "address": {
+      "street": "123 Maple Street",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001"
+    },
+    "preferences": {
+      "theme": "light",
+      "language": "English",
+      "notifications": true,
+      "subscription": true
+    }
+  },
+  {
+    "firstName": "Brian",
+    "lastName": "Lee",
+    "email": "brian.lee@example.com",
+    "dateOfBirth": "1995-07-22",
+    "address": {
+      "street": "456 Oak Avenue",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipCode": "94103"
+    },
+    "preferences": {
+      "theme": "dark",
+      "language": "Chinese",
+      "notifications": false,
+      "subscription": false
+    }
+  },
+  {
+    "firstName": "Catherine",
+    "lastName": "Nguyen",
+    "email": "catherine.nguyen@example.com",
+    "dateOfBirth": "2000-01-10",
+    "address": {
+      "street": "789 Pine Road",
+      "city": "Seattle",
+      "state": "WA",
+      "zipCode": "98101"
+    },
+    "preferences": {
+      "theme": "dark",
+      "language": "Vietnamese",
+      "notifications": true,
+      "subscription": true
+    }
+  }
+]
