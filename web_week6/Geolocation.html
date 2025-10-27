@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: HTML5 Geolocation</title>
+</head>
+<body>
+    <h1>Exercise 2: HTML5 Geolocation</h1>
+    <!-- Button to trigger geolocation retrieval -->
+    <button onclick="getGeolocation()">Get My Location</button>
+    <!-- Paragraph to display the geolocation results -->
+    <p id="geolocation">Click the button to get your location.</p>
+
+    <script>
+        // Function to get the user's geolocation
+        function getGeolocation() {
+            // Check if the browser supports geolocation
+            if (navigator.geolocation) {
+                // Get the current position and call showGeolocation on success
+                navigator.geolocation.getCurrentPosition(showGeolocation);
+            } else {
+                // Display error message if geolocation is not supported
+                document.getElementById('geolocation').textContent = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        // Function to display the latitude and longitude
+        function showGeolocation(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            // Update the paragraph with the coordinates
+            document.getElementById('geolocation').textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+        }
+    </script>
+</body>
+</html>

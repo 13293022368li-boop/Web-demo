@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3: Local Storage To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <!-- Input field for entering a new task -->
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <!-- Button to add the task -->
+    <button onclick="addTask()">Add Task</button>
+
+    <!-- Unordered list to display tasks -->
+    <ul id="taskList"></ul>
+
+    <script>
+        // Retrieve tasks from localStorage or initialize as empty array
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        // Function to display tasks on the page
+        function displayTasks() {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = ''; // Clear the current list
+
+            // Loop through tasks and create list items with remove buttons
+            tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+                li.textContent = task + ' ';
+
+                // Create a remove button for each task
+                const removeBtn = document.createElement('button');
+                removeBtn.textContent = 'Remove';
+                removeBtn.onclick = () => removeTask(index);
+
+                li.appendChild(removeBtn);
+                taskList.appendChild(li);
+            });
+        }
+
+        // Function to add a new task
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const newTask = taskInput.value.trim();
+
+            // Only add non-empty tasks
+            if (newTask !== '') {
+                tasks.push(newTask); // Add task to array
+                localStorage.setItem('tasks', JSON.stringify(tasks)); // Save to localStorage
+                taskInput.value = ''; // Clear input field
+                displayTasks(); // Update the displayed list
+            }
+        }
+
+        // Function to remove a task by index
+        function removeTask(index) {
+            tasks.splice(index, 1); // Remove task from array
+            localStorage.setItem('tasks', JSON.stringify(tasks)); // Update localStorage
+            displayTasks(); // Refresh displayed list
+        }
+
+        // Display tasks when the page loads
+        window.onload = displayTasks;
+    </script>
+</body>
+</html>
