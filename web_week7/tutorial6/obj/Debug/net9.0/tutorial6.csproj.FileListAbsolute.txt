@@ -1,0 +1,15 @@
+/Users/yee/Web/web_week7/tutorial6/bin/Debug/net9.0/tutorial6
+/Users/yee/Web/web_week7/tutorial6/bin/Debug/net9.0/tutorial6.deps.json
+/Users/yee/Web/web_week7/tutorial6/bin/Debug/net9.0/tutorial6.runtimeconfig.json
+/Users/yee/Web/web_week7/tutorial6/bin/Debug/net9.0/tutorial6.dll
+/Users/yee/Web/web_week7/tutorial6/bin/Debug/net9.0/tutorial6.pdb
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.AssemblyInfoInputs.cache
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.AssemblyInfo.cs
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.csproj.CoreCompileInputs.cache
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.sourcelink.json
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.dll
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/refint/tutorial6.dll
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.pdb
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/tutorial6.genruntimeconfig.cache
+/Users/yee/Web/web_week7/tutorial6/obj/Debug/net9.0/ref/tutorial6.dll
