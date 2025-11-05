@@ -42,7 +42,11 @@ namespace LabExerciseCSharp
                     Console.Write(x + " ");
             }
             Console.WriteLine("\n");
-
+        // Lab 5 - Infinite loop analysis
+         Console.WriteLine("Lab 5: Infinite Loop Analysis");
+         Console.WriteLine("Example code: do { Result += 1; } while (Result >= 0);");
+         Console.WriteLine("Explanation: Since Result starts at 0 and is always incremented,");
+         Console.WriteLine("Result will never be less than 0, so the loop never ends.\n");
             // Lab 6 - Car class test
             Console.WriteLine("Lab 6: Car Class Example");
             Car myCar = new Car("Toyota", "Corolla", "Blue", "ABC-123");
