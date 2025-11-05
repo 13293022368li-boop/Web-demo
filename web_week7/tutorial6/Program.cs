@@ -1,7 +1,4 @@
 using System;
-
-namespace LabExerciseCSharp
-{
     class Program
     {
         static void Main(string[] args)
@@ -115,4 +112,3 @@ namespace LabExerciseCSharp
             return $"Car Info: {Make} {Model} ({Colour}) - Reg#: {RegistrationNumber}";
         }
     }
-}
