@@ -82,18 +82,6 @@ footer a:hover {
 }
 
 /* Netflix-style Hero Background */
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 75vh;
-  background-image: url("https://image.tmdb.org/t/p/original/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg");
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.45);
-  z-index: 1;
-}
 
 .hero-overlay {
   position: relative;
@@ -131,16 +119,6 @@ footer a:hover {
   box-shadow: 0 0 18px rgba(229, 9, 20, 0.5);
 }
 
-.hero h1 {
-  font-size: 2.3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  max-width: 600px;
-  margin: 0.5rem auto 1.5rem;
-  color: #d1d5db;
-}
 
 .btn {
   display: inline-block;
@@ -324,4 +302,157 @@ footer a:hover {
 
 #suggestionBox div:hover {
   background: #222;
+}
+
+/* Trending Section */
+.trending-section, .top-picks-section {
+  margin-top: 3rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.trending-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.trend-card {
+  min-width: 180px;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.trend-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.trend-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 24px rgba(229, 9, 20, .35);
+}
+
+.trend-card p {
+  padding: .6rem;
+  color: #fff;
+}
+
+/* Top Picks Grid */
+.top-picks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.pick-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.pick-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.pick-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 24px rgba(229, 9, 20, .35);
+}
+
+.pick-card p {
+  padding: .6rem;
+  color: #fff;
+}
+
+/* ===================== */
+/* Hero Fade-in Animations  */
+/* ===================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Basic fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Fade-in + slide upward */
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1.4s ease-out forwards;
+}
+
+/* Delayed fade for buttons */
+.fade-delay {
+  opacity: 0;
+  animation: fadeUp 1.6s ease-out forwards;
+  animation-delay: .25s;
+}
+
+/* ===================== */
+/* Trending Slider Arrows (C) */
+/* ===================== */
+
+.trend-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0,0,0,0.45);
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  width: 48px;
+  height: 72px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.25s ease;
+  backdrop-filter: blur(3px);
+}
+
+.trend-arrow:hover {
+  background: rgba(229, 9, 20, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+  left: -20px;
+}
+
+.right-arrow {
+  right: -20px;
+}
+
+.trending-section {
+  position: relative;
+  padding: 1rem 0;
 }
