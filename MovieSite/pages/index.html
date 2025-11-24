@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie & Anime Library - Home</title>
+  <meta name="description" content="Browse a curated library of movies and anime titles.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrapper">
+    <div class="logo">Movie & Anime Library</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Browse</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrapper">
+  <section class="hero" style="background-image: url('../images/interstellar.jpg'); background-size: cover; background-position: center;">
+    <div class="hero-gradient"></div>
+    <div class="hero-overlay">
+      <h1 class="hero-title fade-up">Unlimited Movies, Anime, and More.</h1>
+      <p class="hero-subtitle fade-in">Watch anywhere. Start exploring now.</p>
+      <a class="btn hero-btn fade-delay" href="movies.html">Browse Library</a>
+    </div>
+  </section>
+
+  <!-- Trending Now Section -->
+  <section class="trending-section">
+    <h2 class="section-title">Trending Now</h2>
+
+    <button class="trend-arrow left-arrow">❮</button>
+    <button class="trend-arrow right-arrow">❯</button>
+
+    <div class="trending-row">
+      <a href="detail.html?id=1" class="trend-card">
+        <img src="../images/spirited_away.jpg">
+        <p>Spirited Away</p>
+      </a>
+      <a href="detail.html?id=3" class="trend-card">
+        <img src="../images/inception.jpg">
+        <p>Inception</p>
+      </a>
+      <a href="detail.html?id=4" class="trend-card">
+        <img src="../images/interstellar.jpg">
+        <p>Interstellar</p>
+      </a>
+      <a href="detail.html?id=2" class="trend-card">
+        <img src="../images/your_name.jpg">
+        <p>Your Name</p>
+      </a>
+      <a href="detail.html?id=7" class="trend-card">
+        <img src="../images/endgame.jpg">
+        <p>Avengers: Endgame</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Top Picks Section -->
+  <section class="top-picks-section">
+    <h2 class="section-title">Top Picks For You</h2>
+    <div class="top-picks-grid">
+      <a href="detail.html?id=5" class="pick-card">
+        <img src="../images/dark_knight.jpg">
+        <p>The Dark Knight</p>
+      </a>
+      <a href="detail.html?id=10" class="pick-card">
+        <img src="../images/your_lie_in_april.jpg">
+        <p>Your Lie in April</p>
+      </a>
+      <a href="detail.html?id=6" class="pick-card">
+        <img src="../images/mugen_train.jpg">
+        <p>Mugen Train</p>
+      </a>
+      <a href="detail.html?id=9" class="pick-card">
+        <img src="../images/parasite.jpg">
+        <p>Parasite</p>
+      </a>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrapper">
+    <p>Contact: <a href="mailto:info@movieanlibrary.com">Email us</a></p>
+  </div>
+</footer>
+
+<script>
+  // PARALLAX BACKGROUND MOTION (A)
+  const heroSection = document.querySelector(".hero");
+
+  document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 10; // horizontal tilt
+    const y = (e.clientY / window.innerHeight - 0.5) * 10; // vertical tilt
+    heroSection.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+  });
+</script>
+<script>
+  // TRENDING SLIDER (C)
+  const trendRow = document.querySelector(".trending-row");
+  const leftBtn = document.querySelector(".left-arrow");
+  const rightBtn = document.querySelector(".right-arrow");
+
+  rightBtn.addEventListener("click", () => {
+    trendRow.scrollBy({ left: 300, behavior: "smooth" });
+  });
+
+  leftBtn.addEventListener("click", () => {
+    trendRow.scrollBy({ left: -300, behavior: "smooth" });
+  });
+</script>
+</body>
+</html>

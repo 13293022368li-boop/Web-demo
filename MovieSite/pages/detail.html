@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrapper">
+    <div class="logo">Movie & Anime Library</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Browse</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrapper detail-wrapper">
+  <h1>Movie Details</h1>
+  <a href="movies.html" class="btn back-btn">← Back to Browse</a>
+  <button id="playTrailerBtn" class="btn trailer-btn">▶ Watch Trailer</button>
+  <div id="trailerContainer" class="trailer-container" style="margin-top: 1.5rem;"></div>
+
+  <section id="movieDetail"></section>
+</main>
+
+<footer>
+  <div class="wrapper">
+    <p>Contact: <a href="mailto:info@movieanlibrary.com">Email us</a></p>
+  </div>
+</footer>
+
+<script src="../models/movies.js"></script>
+<script src="../js/detail.js"></script>
+
+</body>
+</html>
